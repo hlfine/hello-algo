@@ -4,18 +4,17 @@
  * Author: codingonion (coderonion@gmail.com)
  */
 
-include!("../include/include.rs");
+use hello_algo_rust::include::{print_util, ListNode};
 
-use std::rc::Rc;
 use std::cell::RefCell;
-use list_node::ListNode;
+use std::rc::Rc;
 
 /* 基于链表实现的队列 */
 #[allow(dead_code)]
 pub struct LinkedListQueue<T> {
-    front: Option<Rc<RefCell<ListNode<T>>>>,    // 头节点 front
-    rear: Option<Rc<RefCell<ListNode<T>>>>,     // 尾节点 rear 
-    que_size: usize,                            // 队列的长度
+    front: Option<Rc<RefCell<ListNode<T>>>>, // 头节点 front
+    rear: Option<Rc<RefCell<ListNode<T>>>>,  // 尾节点 rear
+    que_size: usize,                         // 队列的长度
 }
 
 impl<T: Copy> LinkedListQueue<T> {
@@ -23,7 +22,7 @@ impl<T: Copy> LinkedListQueue<T> {
         Self {
             front: None,
             rear: None,
-            que_size: 0, 
+            que_size: 0,
         }
     }
 
